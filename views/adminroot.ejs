@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/adminroot.css">
+</head>
+
+<body>
+    
+       <div id="sign">
+        <h1>ADMIN SIGN-UP</h1>
+        <form  id="sign-form" >
+            <input type="text" placeholder="name" name="name">
+            <input type="email" placeholder="username" name="username" value="">
+            <input type="password" name="password" placeholder="password">
+            <input type="text" placeholder="mobile" name="mobile">
+            <button  type="submit" id="submit">
+                Submit
+            </button>
+            <button id="logBtn">login</button>
+
+        </form>
+       </div>
+
+       <div id="log" >
+        <h1>LOGIN</h1>
+        <form id="login-form">
+            <input type="text" name="username" placeholder="Enter your username" id="" value="">
+            <input type="password" placeholder="Enter password" name="password" id="" value="">
+            <button type="submit" id="loginBtn">LOGIN</button>
+            <button id="signBtn" >sign-in</button>
+            <!-- <a href="/forgot" id="forget">Forgot password</a> -->
+        </form>
+        
+       </div>
+
+    <% if(err){ %>
+        <div class="error-message">
+            <%= err %>
+        </div>
+        <% } %>
+
+
+<script src="/adminlogin.js"></script>        
+</body>
+
+</html>

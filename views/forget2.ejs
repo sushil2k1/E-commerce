@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset Password</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        input {
+            display: block;
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            width: calc(100% - 20px);
+            padding: 12px;
+            margin: 20px auto 0;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="confirmPass" class="container">
+        <h2>Reset Password</h2>
+        <!-- <input type="password" id="newPassword" name="newPassword" placeholder="New Password" required> -->
+        <form id="PBox">
+            <input type="text" id="username" name="username" value="<%= user %>" required>
+            <input type="password" id="newPassword" name="newPassword" placeholder="New Password" required>
+            <input type="password" id="confirmNewPassword" name="confirmNewPassword" placeholder="Confirm New Password"
+                required>
+            <button type="button" id="submit">Submit</button>
+        </form>
+    </section>
+
+    <script>
+        let submit = document.getElementById('submit');
+        let p1 = document.getElementById('newPassword');
+        let p2 = document.getElementById('confirmNewPassword');
+        let form = document.getElementById('PBox');
+        let u = document.getElementById('username');
+
+        submit.addEventListener('click', async () => {
+            let v1 = p1.value.trim();
+            let v2 = p2.value.trim();
+            let user = u.value;
+
+            console.log(v1, v2);
+
+            if (v1 === "" || v2 === "") {
+                alert("Both fields are required.");
+                return;
+            }
+
+            if (v1 !== v2) {
+                alert("Passwords do not match.");
+                return;
+            }
+             updatePassword(v1,user);
+
+            alert("Passwords match. Form can be submitted.");
+
+
+        });
+        async function updatePassword(pass, username) {
+            let obj={
+                username:username,
+                password:pass,
+                confirmPassword:pass
+            }
+            let response=await fetch('/updatePassword', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(obj)
+            })
+            let r=response.json();
+
+            console.log(r);
+        }
+    </script>
+</body>
+<!-- eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoic3VzaGlsc29uaTI4MUBnbWFpbC5jb20iLCJtb2JpbGUiOiJhIiwiaWF0IjoxNzIzMDIwMjQwLCJleHAiOjE3MjMwMzQ2NDB9.hLLuJwybhSkJpPohThc1sLE9xMnP2YIZrcPF_4N1y7I -->
+</html>

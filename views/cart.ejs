@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Navbar</title>
+    <link rel="stylesheet" href="/cart.css">
+    <link rel="stylesheet" href="/common.css">
+
+    <!-- <link rel="stylesheet" href="/home.css"> -->
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>E-Shop</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#About">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="cart">Cart</a></li>
+                <li class="user">
+                    <a href="#" id="username">
+                        <%= user %> <i class="arrow down"></i>
+                    </a>
+                    <ul class="dropdown">
+                        <li><a href="#">Profile</a></li>
+                        <li><a href="logout" id="Logout">Logout</a></li>
+                        <li><a href="track" id="track">Track order</a></li>
+
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+
+    <section class="cartBox" id="cartBox">      
+    </section>
+
+    <section id="buyNow" style="display: none;">
+        <h2>Confirm Your Order</h2>
+        <form id="orderForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="contact">Contact Number:</label>
+                <input type="tel" id="contact" name="contact" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <textarea id="address" name="address" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city" required>
+            </div>
+            <div class="form-group">
+                <label for="state">State:</label>
+                <input type="text" id="state" name="state" required>
+            </div>
+            <div class="form-group">
+                <label for="zip">Zip Code:</label>
+                <input type="text" id="zip" name="zip" required>
+            </div>
+            <div class="form-group">
+                <label for="country">Country:</label>
+                <input type="text" id="country" name="country" required>
+            </div>
+            <button type="submit">Confirm Order</button>
+            <button type="button" id="cancel">Cancel Order</button>
+        </form>
+    </section>
+
+    <section id="About">
+        <div class="about-content">
+            <h2>About E-Shop</h2>
+            <p>Welcome to E-Shop, your number one source for all things product, ie: shoes, electronics, etc.. We're dedicated to providing you the very best of product, with an emphasis on dependability, customer service, and uniqueness.</p>
+            <p>Founded in 2024 by ABC, E-Shop has come a long way from its beginnings in [starting location]. When [Founder Name] first started out, their passion for brand message - ie: "eco-friendly cleaning products" drove them to start their own business.</p>
+            <p>We hope you enjoy our products as much as we enjoy offering them to you. If you have any questions or comments, please don't hesitate to contact us.</p>
+            <p>Sincerely,<br>ABC<br>Founder & CEO</p>
+        </div>
+    </section>
+
+    
+
+
+    <script src="/cart.js"></script>
+</body>
+
+</html>

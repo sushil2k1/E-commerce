@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Navbar</title>
+    <link rel="stylesheet" href="/home.css">
+    <link rel="stylesheet" href="/common.css">
+
+</head>
+<body>
+    
+    <header>
+        <div class="logo">
+            <h1>E-Shop</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home">Home</a></li>
+                <li><a href="">Products</a></li>
+                <li><a href="#About">About</a></li>
+                <li><a href="">Contact</a></li>
+                <li><a href="cart">Cart</a></li>
+                <li class="user">
+                    <a href="#" id="username">
+                        <%= user %> <i class="arrow down"></i>
+                    </a>
+                    <ul class="dropdown">
+                        <li><a href="#">Profile</a></li>
+                        <li><a href="logout" id="Logout">Logout</a></li>
+                        <li><a href="track" id="track">Track order</a></li>
+
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+        <section class="product_box"> </section>
+        <div id="productModal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h2 id="modalProductName"></h2>
+                <img id="modalProductImage" src="" alt="">
+                <p id="modalProductDetails"></p>
+                <p id="modalProductQuantity"></p>
+                <p id="modalProductPrice"></p>
+            </div>
+        </div>
+        <div class="pagination">
+            <button id="prevPage">Previous</button>
+            <span id="pageNumber"></span>
+            <button id="nextPage">Next</button>
+        </div>
+
+      <section id="About">
+        <div class="about-content">
+            <h2>About E-Shop</h2>
+            <p>Welcome to E-Shop, your number one source for all things product, ie: shoes, electronics, etc.. We're dedicated to providing you the very best of product, with an emphasis on dependability, customer service, and uniqueness.</p>
+            <p>Founded in 2024 by ABC, E-Shop has come a long way from its beginnings in [starting location]. When [Founder Name] first started out, their passion for brand message - ie: "eco-friendly cleaning products" drove them to start their own business.</p>
+            <p>We hope you enjoy our products as much as we enjoy offering them to you. If you have any questions or comments, please don't hesitate to contact us.</p>
+            <p>Sincerely,<br>ABC<br>Founder & CEO</p>
+        </div>
+    </section>
+      <script src="/loadProducts.js"></script>
+
+</body>
+</html>

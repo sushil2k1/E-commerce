@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header .logo h1 {
+            margin: 0;
+            color: #f2f2f2;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            margin-right: 50px;
+            color: white;
+            text-decoration: none;
+        }
+
+        section#orders {
+            padding: 20px;
+            margin: 80px auto;
+            max-width: 90%;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+        }
+
+        .order {
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        .order h3 {
+            margin: 0;
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        .order-details {
+            display: flex;
+            margin: 10px 0;
+        }
+
+        .product-image {
+            max-width: 150px;
+            max-height: 150px;
+            margin-right: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .order-details div {
+            flex-grow: 1;
+        }
+
+        .order-details p {
+            margin: 5px 0;
+            color: #666;
+        }
+
+        .status {
+            margin: 10px 0;
+        }
+
+        .status span {
+            font-weight: bold;
+        }
+
+        .status button {
+            margin-left: 10px;
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .status button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>E-Shop</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="admin">Admin</a></li>
+                <li><a href="orders">Orders</a></li>
+                <li><a href="adminLogout">Log out</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h1 style="margin-top: 60px; text-align: center; text-decoration: underline;">ORDERS</h1>
+    <section id="orders">
+        <!-- section where we insert order details through js -->
+    </section>
+
+    <script src="/orders.js"></script>
+</body>
+
+</html>
